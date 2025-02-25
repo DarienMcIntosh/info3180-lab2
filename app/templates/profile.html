@@ -1,0 +1,40 @@
+<body>
+    {% extends "base.html" %}
+    {% block main %}
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="{{ url_for('static', filename='d.jpg') }}" alt="JDM Car" width="500">
+            <div>
+                <div class="profile-name">Darien McIntosh</div>
+                <div class="profile-username">@d.mcintosh</div>
+                <div class="profile-location">Montego Bay, Jamaica</div>
+                <div class="profile-joined">Joined {{joined_date}}</div> </div>
+        </div>
+
+        <div class="profile-bio">
+            I bring ideas to life through code and design.  
+            Love crafting beautiful and functional websites.  
+            Always eager to explore new projects and connect with fellow creatives.
+
+        </div>
+
+        <div class="profile-stats">
+            <div class="profile-stat">
+                <div class="profile-stat-number">3</div>
+                <div>Posts</div>
+            </div>
+            <div class="profile-stat">
+                <div class="profile-stat-number">345</div>
+                <div>Following</div>
+            </div>
+            <div class="profile-stat">
+                <div class="profile-stat-number">413</div>
+                <div>Followers</div>
+            </div>
+        </div>
+
+        <button class="follow-button">Follow</button>
+    </div>
+    {% endblock %}
+</body>
+</html>
