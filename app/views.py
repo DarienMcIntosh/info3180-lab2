@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from datetime import datetime
-
-app = Flask(__name__)
+from app import app
 ###
 # Routing for your application.
 ###
+
 
 @app.route('/')
 def home():
@@ -20,7 +20,7 @@ def about():
 @app.route('/profile')
 def profile():
     """Render the website's profile page."""
-    joined_date = date(2025, 2, 1)
+    joined_date = datetime(2025, 2, 1)
     formatted_joined_date = format_date_joined(joined_date)
     return render_template('profile.html', joined_date=formatted_joined_date)
 
@@ -55,11 +55,8 @@ def page_not_found(error):
 
 
 def format_date_joined(date_obj): 
-    if not isinstance(date_obj, date):
+    if not isinstance(date_obj, datetime):
         return None 
 
     formatted_date = date_obj.strftime("%B, %Y")
     return formatted_date
-
-if __name__ == '__main__':
-    app.run(debug=True)
